@@ -18,9 +18,8 @@ B: <input type="range" min="0" max="255" name="blue"  value="255" />
 
     function setColor(){
         var colorText = `rgb(${red.value},${green.value},${blue.value})`;
-        color.textContent = colorText;
+        color.textContent = `${colorText} - ${new Date()}` ;
         document.body.style.backgroundColor = colorText;
-        console.log(colorText);
     }
 
     red.oninput = setColor;
