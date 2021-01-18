@@ -1,0 +1,29 @@
+<!doctype html>
+<title>Color</title>
+
+R: <input type="range" min="0" max="255" name="red"   value="255" />
+G: <input type="range" min="0" max="255" name="green" value="255" />
+B: <input type="range" min="0" max="255" name="blue"  value="255" />
+<div id="color"></div>
+
+<script>
+    /** @type {HTMLInputElement} */
+    var red   = document.getElementsByName("red")[0];
+    /** @type {HTMLInputElement} */
+    var green = document.getElementsByName("green")[0];
+    /** @type {HTMLInputElement} */
+    var blue  = document.getElementsByName("blue")[0];
+
+    var color = document.getElementById("color");
+
+    function setColor(){
+        var colorText = `rgb(${red.value},${green.value},${blue.value})`;
+        color.textContent = colorText;
+        document.body.style.backgroundColor = colorText;
+        console.log(colorText);
+    }
+
+    red.oninput = setColor;
+    green.oninput = setColor;
+    blue.oninput = setColor;
+</script>
